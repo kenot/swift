@@ -12,7 +12,18 @@ import java.util.Scanner;
  */
 public class Task5c_PrintEverySentence {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         
+        String input = sc.nextLine();
+        
+        for(char c : input.toCharArray()){
+            System.out.print(c);
+            
+            if (c == '.' || c == '!' || c == '?') {
+                System.out.println();
+            }
+        }
+        System.out.println();
     }
     
 }
