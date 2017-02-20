@@ -15,19 +15,18 @@ public class Task5d_SumOfNumbersInString {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         
+        int n = 0;
         int sum = 0;
         
-        String num = "";
-        
-        for (int i = 0; i < input.length(); i++) {
-            if (Character.isDigit(input.charAt(i))) {
-                num = num + input.charAt(i);
-            }
-            else if (!num.equals("")) {
-                sum = sum + Integer.parseInt(num);
-                num = "";
+        for(char c : input.toCharArray()){
+            if ('0' <= c && c <= '9') {
+                n = n * 10 + (c - '0');
+            } else{
+                sum += n;
+                n = 0;
             }
         }
+        sum += n;
         System.out.println(sum);
     }
     
