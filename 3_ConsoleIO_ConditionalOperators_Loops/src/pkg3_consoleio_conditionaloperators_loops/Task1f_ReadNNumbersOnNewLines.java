@@ -18,13 +18,13 @@ public class Task1f_ReadNNumbersOnNewLines {
            Scanner sc = new Scanner(System.in);
            int n = sc.nextInt();
            
-           List<Integer> anArray = new ArrayList<Integer>();
+           String draft = "";
            
-           while(anArray.size() < n){
-               int numbers = sc.nextInt();
-               anArray.add(numbers);
-           }
-           System.out.println("\n" + anArray.toString().replace(",", "").replace("[", "").replace("]", ""));
+           for (int i = 0; i < n; i++) {
+               int x = sc.nextInt();
+               draft = draft + x + " ";
+        }
+           System.out.println(draft);
     }
     
 }
