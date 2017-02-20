@@ -13,21 +13,24 @@ import java.util.Scanner;
 public class Task3a_PrintMinAndMax {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int number = sc.nextInt();
-        int min, max;
+        int n = sc.nextInt();
         
-        min = max = number;
+        int current = sc.nextInt();
+        int min = current;
+        int max = current;
         
-        while(number != 0){
-            number = sc.nextInt();
-            if (number < min) {
-                min = number;
-            }
-            if (number > max) {
-                max = number;
+        for (int i = 1; i < n; i++) {
+            current = sc.nextInt();
+            if (current < min) {
+                min = current;
+            } else if (current > max) {
+                max = current;
             }
         }
-        System.out.println(min + " " + max);
+        
+        
+        System.out.print(min + " " + max);
+        System.out.println();
     }
     
 }
