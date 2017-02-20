@@ -13,33 +13,36 @@ import java.util.Scanner;
 public class Task2i_ToBinaryAndHexa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int inputNumber = sc.nextInt();
         
-        int copyOfInputNumber = inputNumber;
+        int number = sc.nextInt();
         
-        String binary = "";
+        int base = 2;
+        int n = number;
         
-        int rem1 = 0;
+        String result = "";
         
-        while(inputNumber > 0){
-            rem1 = inputNumber % 2;
-            binary = rem1 + binary;
-            inputNumber = inputNumber / 2;
+        while(n != 0){
+            result = n % base + result;
+            n /= base;
         }
         
-        String hexa = "";
+        System.out.println(result);
         
-        char hexaDecimals[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+        base = 16;
+        n = number;
+        result = "";
         
-        int rem2 = 0;
-        
-        while(inputNumber > 0){
-            rem2 = inputNumber % 16;
-            hexa = hexaDecimals[rem2] + hexa;
-            inputNumber = inputNumber / 16;
+        while(n != 0){
+            int digit = n % base;
+            
+            if (digit < 10) {
+                result = digit + result;
+            } else{
+                result = (char)('A' + (digit - 10)) + result;
+            }
+            
+            n /= base;
         }
-        
-        System.out.println(binary);
-        System.out.println(hexa);
+        System.out.println(result);
     }
 }
