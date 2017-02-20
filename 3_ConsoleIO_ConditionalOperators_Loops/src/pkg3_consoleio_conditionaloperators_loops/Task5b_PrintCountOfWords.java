@@ -15,14 +15,20 @@ public class Task5b_PrintCountOfWords {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         
-        int wordCount = 1;
+        int count = 0;
+        boolean oldWord = false;
         
-        for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) == ' ') {
-                wordCount++;
+        for(char c: input.toCharArray()){
+            if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z')){
+                if (!oldWord) {
+                    oldWord = true;
+                    count++;
+                }
+            } else{
+                oldWord = false;
             }
         }
-        System.out.println(wordCount);
+        System.out.println(count);
     }
     
 }
