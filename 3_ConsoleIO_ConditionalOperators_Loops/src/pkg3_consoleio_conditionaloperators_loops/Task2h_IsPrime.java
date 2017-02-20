@@ -15,21 +15,23 @@ public class Task2h_IsPrime {
         Scanner input = new Scanner(System.in);
         int number = input.nextInt();
         
-        int j = 2;
-        int result = 0;
-        boolean isPrime = true;
-        while(j <= number / 2){
-            if (number % j == 0) {
-                result = 1;
+        if (number == 1) {
+            System.out.println("true and false");
+            return;
+        }
+        
+        if (number % 2 == 0) {
+            System.out.println("false");
+            return;
+        }
+        
+        for (int i = 3; i * i <= number; i += 2) {
+            if (number % i == 0) {
+                System.out.println("false");
+                return;
             }
-            j++;
         }
-        if (result == 1) {
-            System.out.println(isPrime);
-        }
-        else{
-            System.out.println(false);
-        }
+        System.out.println("true");
     }
     
 }
