@@ -15,11 +15,13 @@ public class Task3d_PrintReversedSequence {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         
-        do {
-            System.out.print(n-((n/10)*10) + " ");
-            n /=10;
-        } while (n / 10 > 0);
-        System.out.println(n % 10);
+        String result = "";
+        
+        for (int i = 0; i < n; i++) {
+            int numbers = sc.nextInt();
+            result = numbers + " " + result;
+        }
+        System.out.println(result);
     }
     
 }
