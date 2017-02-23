@@ -13,50 +13,31 @@ import java.util.Arrays;
  */
 public class Task3c_PrintClusterCount {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int N = input.nextInt();
+        Scanner sc = new Scanner(System.in);
         
-        int[] numbers = new int[N];
+        int numberCount = sc.nextInt();
+        int[] numbers = new int[numberCount];
         
-        int temp = 0;
+        int clusterCount = 0;
+        boolean oldCluster = false;
         
-        for (int i = 0; i < N; i++) {
-            numbers[i] = input.nextInt();
-        }
+        numbers[0] = sc.nextInt();
         
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = 1; j < (numbers.length - i); j++) {
-                if (numbers[j - 1] > numbers[j]) {
-                    temp = numbers[j - 1];
-                    numbers[j - 1] = numbers[j];
-                    numbers[j] = temp;
+        for(int i = 1; i < numberCount; i++){
+            numbers[i] = sc.nextInt();
+            
+            if(numbers[i] == numbers[i-1]) {
+                if(!oldCluster) {
+                    clusterCount++;
                 }
+                
+                oldCluster = true;
+            } else{
+                oldCluster = false;
             }
         }
         
-        int numDuplicate = 0;
-        int dupCount = 0;
-        int previous = -1;
-        
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == previous) {
-                ++numDuplicate;
-                if (numDuplicate == 1) {
-                    ++dupCount;
-                    if (dupCount == 1) {
-                        System.out.print(numbers[i]);
-                    }
-                    else{
-                        System.out.print(", " + numbers[i]);
-                    }
-                }
-            }
-            else{
-                previous = numbers[i];
-                numDuplicate = 0;
-            }
-        }
-        System.out.println("\nNumber of duplicate values: " + dupCount);
+        System.out.println(clusterCount);
     }
     
 }
