@@ -10,24 +10,24 @@ import java.util.Arrays;
  *
  * @author tonek
  */
-public class Task1c_Contains {
+public class Task1c_Methods {
     
-    public int GetArrayIndex(int array[], int value){
+    static int indexOf(int array[], int element){
           
        
         for (int i = 0; i < array.length; i++) {
-                if (array[i] == value) {
+                if (array[i] == element) {
                     return i;
-                } else{
-                    return -1;
-                }
+                } 
             }
+        return -1;
     }
     
     public static void main(String[] args) {
-        int indexNum = GetArrayIndex(2, 2);
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         
-        System.out.println(indexNum);
+        System.out.println(indexOf(array, 4));
+        System.out.println(indexOf(array, 11));
     }
     
 }
