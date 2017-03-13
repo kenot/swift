@@ -10,7 +10,7 @@ package pkg5_classes_objects;
  * @author tonek
  */
 import java.util.Scanner;
-public class Task0_Classes {
+public class Task2_Classes {
 
     /**
      * @param args the command line arguments
@@ -21,6 +21,12 @@ public class Task0_Classes {
         String result = person.getDescription();
         
         System.out.println(result);
+        
+        Car car = new Car();
+        
+        double insurance = car.insurancePrice();
+        
+        System.out.println(insurance);
     }
     
 }

@@ -13,20 +13,20 @@ public class Person {
     String name;
     int age;
     
-    Person(){
+    public Person(){
         name = "No name";
         age = -1;
     }
 
-    public Person(String newName){
-        name = newName;
+    public Person(String name){
+        this.name = name;
         age = -1;
     }
     
-    public Person(String newName, int newAge){
-        name = newName;
-        if(0 <= newAge && newAge <= 150){
-            age = newAge;
+    public Person(String name, int age){
+        this.name = name;
+        if(0 <= age && age <= 150){
+            this.age = age;
         }
         else{
             age = -1;
